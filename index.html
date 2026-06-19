@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live TV</title>
+
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- السيرفرات -->
+    <div class="servers">
+        <button class="server active"
+        onclick="changeServer(0)">Server 1</button>
+
+        <button class="server"
+        onclick="changeServer(1)">Server 2</button>
+    </div>
+
+    <!-- المشغل -->
+    <div class="player-box">
+        <video id="player" playsinline controls></video>
+    </div>
+
+    <!-- القنوات -->
+    <div class="channels">
+
+        <div class="channel active"
+        onclick="changeChannel(0)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
+            <span>beIN MAX 1</span>
+        </div>
+
+        <div class="channel"
+        onclick="changeChannel(1)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
+            <span>beIN MAX 2</span>
+        </div>
+
+        <div class="channel"
+        onclick="changeChannel(2)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
+            <span>beIN SPORTS 1</span>
+        </div>
+
+        <div class="channel"
+        onclick="changeChannel(3)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
+            <span>beIN SPORTS 2</span>
+        </div>
+
+    </div>
+
+    <!-- معلومات القناة -->
+    <div class="info-card">
+        <h3>beIN SPORTS</h3>
+        <p>القناة الرياضية المباشرة</p>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
