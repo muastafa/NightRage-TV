@@ -3,71 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live TV</title>
+<title>SUFI TV</title>
 
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+<style>
 
-<link rel="stylesheet" href="style.css">
+body{
+margin:0;
+font-family:Arial,sans-serif;
+overflow-x:hidden;
+position:relative;
+min-height:100vh;
+background:#000 url("https://e.top4top.io/p_38229y3981.jpg") center center/cover no-repeat fixed;
+animation:bgZoom 15s ease-in-out infinite alternate;
+}
+
+@keyframes bgZoom{
+from{
+background-size:100%;
+}
+to{
+background-size:110%;
+}
+}
+
+/* تعتيم */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+z-index:-1;
+}
+
+/* ضباب متحرك */
+body::after{
+content:"";
+position:fixed;
+inset:-30%;
+background:
+radial-gradient(circle at 20% 30%, rgba(0,180,255,.15), transparent 35%),
+radial-gradient(circle at 80% 70%, rgba(120,0,255,.12), transparent 40%);
+animation:fog 12s ease-in-out infinite alternate;
+z-index:-1;
+}
+
+@keyframes fog{
+from{
+transform:translate(-3%,-3%) scale(1);
+}
+to{
+transform:translate(3%,3%) scale(1.2);
+}
+}
+
+/* HEADER */
+.header{
+background:linear-gradient(180deg,#0c0f14,#07090c);
+padding:16px 22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.telegram-btn{
+width:48px;
+height:48px;
+border-radius:50%;
+background:#1c1f26;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 12px rgba(0,0,0,.6);
+transition:.3s;
+}
+
+.telegram-btn img{
+width:26px;
+}
+
+.telegram-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 18px rgba(0,136,204,.8);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+flex-direction:row-reverse;
+}
+
+.brand img{
+width:46px;
+height:46px;
+border-radius:50%;
+box-shadow:0 0 12px rgba(140,110,255,.6);
+}
+
+.brand span{
+font-size:30px;
+font-weight:900;
+color:white;
+letter-spacing:1px;
+}
+
+.packages{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+padding:20px;
+}
+
+.package-card{
+background:rgba(255,255,255,.06);
+padding:10px;
+border-radius:20px;
+text-align:center;
+transition:.35s;
+backdrop-filter:blur(6px);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.package-card:hover{
+transform:scale(1.08);
+box-shadow:0 0 22px rgba(0,255,255,.5);
+}
+
+.package-card img{
+width:100%;
+max-width:180px;
+border-radius:15px;
+}
+
+.package-card h4{
+margin:8px 0 0;
+color:#fff;
+font-size:12px;
+}
+
+a{
+text-decoration:none;
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="header">
 
-    <!-- السيرفرات -->
-    <div class="servers">
-        <button class="server active"
-        onclick="changeServer(0)">Server 1</button>
+<a href="go:tlk" target="_blank" class="telegram-btn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+</a>
 
-        <button class="server"
-        onclick="changeServer(1)">Server 2</button>
-    </div>
-
-    <!-- المشغل -->
-    <div class="player-box">
-        <video id="player" playsinline controls></video>
-    </div>
-
-    <!-- القنوات -->
-    <div class="channels">
-
-        <div class="channel active"
-        onclick="changeChannel(0)">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
-            <span>beIN MAX 1</span>
-        </div>
-
-        <div class="channel"
-        onclick="changeChannel(1)">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
-            <span>beIN MAX 2</span>
-        </div>
-
-        <div class="channel"
-        onclick="changeChannel(2)">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
-            <span>beIN SPORTS 1</span>
-        </div>
-
-        <div class="channel"
-        onclick="changeChannel(3)">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/BeIN_Sports_logo.svg">
-            <span>beIN SPORTS 2</span>
-        </div>
-
-    </div>
-
-    <!-- معلومات القناة -->
-    <div class="info-card">
-        <h3>beIN SPORTS</h3>
-        <p>القناة الرياضية المباشرة</p>
-    </div>
+<div class="brand">
+<img src="https://c.top4top.io/p_3814jvtce1.jpg">
+<span>NightRage TV</span>
+</div>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<div class="packages"><a href="go:max1">
+<div class="package-card">
+<img src="https://h.top4top.io/p_3822tssjh1.jpg">
+<h4>Bein Max1</h4>
+</div>
+</a>
 
-<script src="script.js"></script>
+<a href="">
+<div class="package-card">
+<img src="https://j.top4top.io/p_3822cv7h91.jpg">
+<h4>Bein Max2</h4>
+</div>
+</a>
+
+<a href="">
+<div class="package-card">
+<img src="https://l.top4top.io/p_3822qxdvk1.jpg">
+<h4>Bein Max3</h4>
+</div>
+</a>
+
+<a href="">
+<div class="package-card">
+<img src="https://b.top4top.io/p_3822s7mqs1.jpg">
+<h4>Bein Max4</h4>
+</div>
+</a>
+
+<a href="">
+<div class="package-card">
+<img src="https://f.top4top.io/p_3822k918n1.jpg">
+<h4>Bein Max5</h4>
+</div>
+</a>
+
+</div>
 
 </body>
 </html>
